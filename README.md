@@ -10,3 +10,8 @@ This is a lightweight project that doesn't use any databases and instead the ima
 1. There is in some cases depending on image, size, format and diminsions a issue where images do not upload correctly. 
 2. Watermark positions are not dynamic to image size, and so if the same watermark is applied to different sized images it will not always position correctly.
 3. The dropdown position options are also not dynamic to image size. 
+
+### External Resources
+This project uses the following external resources that I did not produce:
++ Materialize CSS Material Design framework: https://github.com/Dogfalo/materialize
++ jQuery: https://github.com/jquery/jquery 
