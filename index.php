@@ -1,12 +1,18 @@
 <?php
+    // Starts the PHP session to allow the code to access the SESSION variables.
     session_start();
 
+    // Gets the ID of the current session. 
     $id = session_id();
 
+    // If the image SESSION variable is empty than create a new array and define it to the session variable.
     if (empty($_SESSION['images'])) {
         $array = array();
         $_SESSION['images'] = $array;
     };
+
+    // Get image array and assign it to the $array variable.
+    $array = $_SESSION['images'];
 ?>
 
 <html>
@@ -70,10 +76,11 @@
                     <center>
                         <p id="error"></p>
                         <?php
-                            $array = $_SESSION['images'];
                             if (empty($array)) {
+                                // If the array is empty then display a message to the user telling them so.
                                 echo '<br /><br /><span class="icon icon-5x">warning</span><br /><h3 style="margin-top: 5px;">No images to show, upload some!</h3>';
                             } else {
+                                // Otherwise get the first image within the array and display in the middle of the screen. 
                                 echo '<img src="' . $array[0] . '" height="100%" class="img-rounded" id="mainImage" />'; 
                             }; 
                         ?>
@@ -84,8 +91,8 @@
                         <div class="footerContent">
                             <ul>
                                 <?php
-                                    $array = $_SESSION['images'];
-
+                                    // For each loop for every item within the image array.
+                                    // For each item in the array as $item, display it in the queue at the bottom of the screen.
                                     foreach ($array as $image) {
                                         echo '<li><a href="#" class="footerImageLink"><img src="' . $image . '" width="145px;" class="footerImage"></a></li>';
                                     };
